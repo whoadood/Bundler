@@ -91,7 +91,7 @@ function ResultsSummary({
     },
   },
 }: {
-  data: Data;
+  data?: Data;
 }) {
   const summaryFields = [data.summary.reaction, data.summary.memory, data.summary.verbal, data.summary.visual];
 

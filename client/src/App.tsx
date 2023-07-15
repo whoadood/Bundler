@@ -100,7 +100,7 @@ function App() {
     },
     {
       name: 'News Letter',
-      id: 'newsletter',
+      id: 'newsletter2',
       component: <NewsLetter />,
       preview: newsLetterPreview,
       difficulty: 'intermediate',
@@ -108,7 +108,7 @@ function App() {
     },
     {
       name: 'News Letter',
-      id: 'newsletter',
+      id: 'newsletter3',
       component: <NewsLetter />,
       preview: newsLetterPreview,
       difficulty: 'newbie',
@@ -116,7 +116,7 @@ function App() {
     },
     {
       name: 'News Letter',
-      id: 'newsletter',
+      id: 'newsletter4',
       component: <NewsLetter />,
       preview: newsLetterPreview,
       difficulty: 'guru',
