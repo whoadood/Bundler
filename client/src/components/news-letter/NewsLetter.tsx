@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+
+import Attribution from '../general/Attribution';
+
 import listIcon from '../../assets/news-letter/images/icon-list.svg';
 import illustrationDT from '../../assets/news-letter/images/illustration-sign-up-desktop.svg';
 import illustrationMB from '../../assets/news-letter/images/illustration-sign-up-mobile.svg';
@@ -8,34 +11,6 @@ const updatesList = [
   'Measuring to ensure updates are a success',
   'And much more!',
 ];
-
-function Attribution() {
-  return (
-    <div
-      className="mt-8"
-      style={{
-        fontSize: '11px',
-        textAlign: 'center',
-      }}
-    >
-      Challenge by{' '}
-      <a
-        style={{
-          color: 'hsl(228, 45%, 44%)',
-        }}
-        href="https://www.frontendmentor.io?ref=challenge"
-        target="_blank"
-      >
-        Frontend Mentor
-      </a>
-      . Coded by{' '}
-      <a href="https://www.github.com/whoadood" target="_blank">
-        whoadood
-      </a>
-      .
-    </div>
-  );
-}
 
 function ActButton({
   text,
@@ -188,7 +163,7 @@ function NewsLetter() {
   return (
     <main className="min-h-screen bg-darkSlate flex flex-col justify-center items-center">
       <SignUpCard />
-      <Attribution />
+      <Attribution href="https://www.frontendmentor.io?ref=challenge" />
     </main>
   );
 }
