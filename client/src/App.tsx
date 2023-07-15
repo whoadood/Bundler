@@ -1,12 +1,21 @@
 import { act } from 'react-dom/test-utils';
 import NewsLetter from './components/news-letter/NewsLetter';
 
+import newsLetterPreview from './assets/news-letter/images/desktop-preview.jpg';
+
+import { EyeIcon, PaperAirplaneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+
 import { useState } from 'react';
+
+type Difficulty = 'newbie' | 'junior' | 'intermediate' | 'advanced' | 'guru';
 
 type Project = {
   name: string;
   id: string;
   component: JSX.Element;
+  preview: string;
+  difficulty: Difficulty;
+  url: string;
 };
 
 const Header = ({
@@ -22,16 +31,16 @@ const Header = ({
 
   return (
     <header className="bg-gradient-to-r from-teal-500 to-cyan-600 shadow-xl font-bold text-white text-2xl">
-      <nav className="flex justify-between w-full relative p-4">
+      <nav className="flex justify-between items-center w-full relative p-2">
         <div onClick={() => handleActiveTab()} className="cursor-pointer hover:scale-105">
           Bundler
         </div>
 
-        <button className="bg-red-500 hover:scale-105" onClick={toggleMenu}>
-          {menuActive ? 'x' : 'menu'}
+        <button className="bg-red-500 hover:scale-105 p-2" onClick={toggleMenu}>
+          {menuActive ? <XMarkIcon className="h-8 w-8" /> : <Bars3Icon className="h-8 w-8" />}
         </button>
 
-        <ul className={menuActive ? 'flex flex-col bg-cyan-600 gap-4 absolute top-12 right-0 p-4' : 'hidden'}>
+        <ul className={menuActive ? 'flex flex-col bg-cyan-600 gap-4 absolute top-16 right-0 p-4' : 'hidden'}>
           {projects.map((n) => (
             <li onClick={() => handleActiveTab(n)} className="hover:scale-105 cursor-pointer" key={n.id}>
               {n.name.toUpperCase()}
@@ -60,18 +69,114 @@ function App() {
       name: 'News Letter',
       id: 'newsletter',
       component: <NewsLetter />,
+      preview: newsLetterPreview,
+      difficulty: 'junior',
+      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+    },
+    {
+      name: 'News Letter',
+      id: 'newsletter',
+      component: <NewsLetter />,
+      preview: newsLetterPreview,
+      difficulty: 'advanced',
+      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+    },
+    {
+      name: 'News Letter',
+      id: 'newsletter',
+      component: <NewsLetter />,
+      preview: newsLetterPreview,
+      difficulty: 'intermediate',
+      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+    },
+    {
+      name: 'News Letter',
+      id: 'newsletter',
+      component: <NewsLetter />,
+      preview: newsLetterPreview,
+      difficulty: 'newbie',
+      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+    },
+    {
+      name: 'News Letter',
+      id: 'newsletter',
+      component: <NewsLetter />,
+      preview: newsLetterPreview,
+      difficulty: 'guru',
+      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
     },
   ];
+
+  const colorSelect = (difficulty: Difficulty) => {
+    switch (difficulty) {
+      case 'newbie':
+        return 'bg-green-500';
+      case 'junior':
+        return 'bg-yellow-600';
+      case 'intermediate':
+        return 'bg-orange-500';
+      case 'advanced':
+        return 'bg-red-500';
+      case 'guru':
+        return 'bg-black';
+      default:
+        return 'bg-gradient-t-r from-teal-500 to-cyan-600';
+    }
+  };
+
+  const shadowColorSelect = (difficulty: Difficulty) => {
+    switch (difficulty) {
+      case 'newbie':
+        return 'shadow-green-500 hover:shadow-green-500';
+      case 'junior':
+        return 'shadow-yellow-600 hover:shadow-yellow-600';
+      case 'intermediate':
+        return 'shadow-orange-500 hover:shadow-orange-500';
+      case 'advanced':
+        return 'shadow-red-500 hover:shadow-red-500';
+      case 'guru':
+        return 'shadow-black hover:shadow-black';
+      default:
+        return '';
+    }
+  };
 
   return (
     <>
       <Header projects={projects} handleActiveTab={handleActiveTab} />
-      <div className="h-screen bg-slate-400">
+      <div className="h-screen bg-slate-200">
         {activeTab ? (
           activeTab.component
         ) : (
-          <div className="h-screen bg-slate-700 font-bold text-white flex justify-center items-center">
-            <span className="text-4xl">loading</span>
+          <div className="h-screen bg-slate-600 font-bold text-white p-2 flex justify-center items-center">
+            <ul className="grid grid-cols-4 gap-8">
+              {projects.map((p) => (
+                <li
+                  className={`${shadowColorSelect(
+                    p.difficulty,
+                  )} " rounded-xl hover:shadow-xl shadow-md overflow-hidden"`}
+                  key={p.id}
+                >
+                  <div className="relative group">
+                    <img src={p.preview} className="w-64 rounded-t-xl" />
+                    <div className="hidden group-hover:flex absolute top-0 bottom-0 right-0 left-0 bg-black/30 justify-center items-center rounded-t-xl">
+                      <button
+                        onClick={() => handleActiveTab(p)}
+                        className="bg-gradient-to-r from-cyan-500 hover:from-cyan-400 hover:to-teal-500 to-teal-600 border-2 border-white rounded-full opacity-0 group-hover:opacity-100 transition-all duration-1000 ease-out p-2 cursor-pointer"
+                      >
+                        {<EyeIcon className="h-6 w-6" />}
+                      </button>
+                    </div>
+                  </div>
+                  <h2 className={`${colorSelect(p.difficulty)} p-4 rounded-b-xl flex justify-between`}>
+                    <span>{p.name}</span>
+                    <a className="hover:scale-110 rounded-full" target="_blank" href={p.url}>
+                      {<PaperAirplaneIcon className="h-6 w-6" />}
+                    </a>
+                  </h2>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
