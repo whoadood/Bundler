@@ -4,12 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
+        // news letter
         tomato: 'hsl(4, 100%, 67%)',
         creamcycle: '#ff4d76',
         darkSlate: 'hsl(234, 29%, 20%)',
         charcoal: 'hsl(235, 18%, 26%)',
         femGrey: 'hsl(231, 7%, 60%)',
         femWhite: 'hsl(0, 0%, 100%)',
+        // results summary
         lightRed: 'hsl(0, 100%, 67%)',
         orangeyYellow: 'hsl(39, 100%,  56%)',
         greenTeal: 'hsl(166, 100%, 37%)',
@@ -21,9 +23,19 @@ export default {
         paleBlue: 'hsl(221, 100%, 89%)',
         lavender: 'hsl(241, 100%, 89%)',
         grayBlue: 'hsl(224, 30%, 27%)',
+        // credit card
+        gradientA: 'hsl(249, 99%, 64%)',
+        gradientB: 'hsl(278, 99%, 30%)',
+        femRed: 'hsl(0, 100%, 66%)',
+        LGrayViolet: 'hsl(270, 3%, 87%',
+        DGrayViolet: 'hsl(279, 6%, 55%)',
+        darkViolet: 'hsl(278, 68%, 11%)',
       },
       boxShadow: {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
+      },
+      fontFamily: {
+        space: '[Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)',
       },
     },
   },

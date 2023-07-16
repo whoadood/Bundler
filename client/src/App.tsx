@@ -1,9 +1,10 @@
-import { act } from 'react-dom/test-utils';
 import NewsLetter from './components/news-letter/NewsLetter';
 import ResultsSummary from './components/results-summary/ResultsSummary';
+import CreditCard from './components/credit-card/CreditCard';
 
 import newsLetterPreview from './assets/news-letter/images/desktop-preview.jpg';
 import resultsSummaryPreview from './assets/results-summary/images/desktop-preview.jpg';
+import creditCardPreview from './assets/credit-card/images/desktop-preview.jpg';
 
 import { EyeIcon, PaperAirplaneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
@@ -99,12 +100,12 @@ function App() {
       url: 'https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV',
     },
     {
-      name: 'News Letter',
-      id: 'newsletter2',
-      component: <NewsLetter />,
-      preview: newsLetterPreview,
-      difficulty: 'intermediate',
-      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+      name: 'Credit Card',
+      id: 'creditcard',
+      component: <CreditCard />,
+      preview: creditCardPreview,
+      difficulty: 'junior',
+      url: 'https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw',
     },
     {
       name: 'News Letter',

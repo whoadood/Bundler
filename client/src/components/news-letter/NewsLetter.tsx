@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import Attribution from '../general/Attribution';
 
+import useWindowWidth from '../../hooks/useWindowWidth';
+
 import listIcon from '../../assets/news-letter/images/icon-list.svg';
 import illustrationDT from '../../assets/news-letter/images/illustration-sign-up-desktop.svg';
 import illustrationMB from '../../assets/news-letter/images/illustration-sign-up-mobile.svg';
@@ -45,18 +47,7 @@ function SignUpCard() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [windowWidth, setWindowWidth] = useState<number | null>(null);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [setWindowWidth]);
+  const windowWidth = useWindowWidth();
 
   const toggleSuccess = () => setSuccess(!success);
 
