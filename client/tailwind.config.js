@@ -35,6 +35,12 @@ export default {
         cream: 'hsl(30, 38%, 92%)',
         darkBlue: 'hsl(212, 21%, 14%)',
         grayishBlue: 'hsl(228, 12%, 48%)',
+        // expenses chart
+        softRed: 'hsl(10, 79%, 65%)',
+        femCyan: 'hsl(186, 34%, 60%)',
+        darkBrown: 'hsl(25, 47%, 15%)',
+        cream2: 'hsl(27, 66%, 92%)',
+        paleOrange: 'hsl(33, 100%, 98%)',
       },
       boxShadow: {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
@@ -45,6 +51,7 @@ export default {
         space: '[Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)',
         montserrat: '[Montserrat](https://fonts.google.com/specimen/Montserrat)',
         fraunces: '[Fraunces](https://fonts.google.com/specimen/Fraunces)',
+        dmSans: '[DM Sans](https://fonts.google.com/specimen/DM+Sans)',
       },
     },
   },

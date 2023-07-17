@@ -38,7 +38,7 @@ const defaultProduct = {
   price: 169.99,
 };
 
-function ProductPreview({ product = defaultProduct }: { product: Product }) {
+function ProductPreview({ product = defaultProduct }: { product?: Product }) {
   const windowWidth = useWindowWidth();
 
   const handleATC = (product: Product) => {

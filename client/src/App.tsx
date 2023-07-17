@@ -6,11 +6,13 @@ import newsLetterPreview from './assets/news-letter/images/desktop-preview.jpg';
 import resultsSummaryPreview from './assets/results-summary/images/desktop-preview.jpg';
 import creditCardPreview from './assets/credit-card/images/desktop-preview.jpg';
 import productPreviewPreview from './assets/product-preview/images/desktop-preview.jpg';
+import expensesChartPreview from './assets/expenses-chart/images/desktop-preview.jpg';
 
 import { EyeIcon, PaperAirplaneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 import { useState } from 'react';
 import ProductPreview from './components/product-preview/ProductPreview';
+import ExpensesChart from './components/expenses-chart/ExpensesChart';
 
 type Difficulty = 'newbie' | 'junior' | 'intermediate' | 'advanced' | 'guru';
 
@@ -112,12 +114,12 @@ function App() {
       url: 'https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa',
     },
     {
-      name: 'News Letter',
-      id: 'newsletter4',
-      component: <NewsLetter />,
-      preview: newsLetterPreview,
-      difficulty: 'guru',
-      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+      name: 'Expenses Chart',
+      id: 'expenseschart',
+      component: <ExpensesChart />,
+      preview: expensesChartPreview,
+      difficulty: 'junior',
+      url: 'https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt',
     },
   ];
 
