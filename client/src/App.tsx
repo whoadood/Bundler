@@ -58,7 +58,7 @@ const Header = ({
           {menuActive ? <XMarkIcon className="h-8 w-8" /> : <Bars3Icon className="h-8 w-8" />}
         </button>
 
-        <ul className={menuActive ? 'flex flex-col bg-cyan-600 gap-4 absolute top-16 right-0 p-4' : 'hidden'}>
+        <ul className={menuActive ? 'flex flex-col bg-cyan-600 gap-4 absolute z-50 top-16 right-0 p-4' : 'hidden'}>
           {projects.map((n) => (
             <li onClick={() => handleActiveTab(n)} className="hover:scale-105 cursor-pointer" key={n.id}>
               {n.name.toUpperCase()}
