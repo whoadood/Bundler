@@ -5,10 +5,12 @@ import CreditCard from './components/credit-card/CreditCard';
 import newsLetterPreview from './assets/news-letter/images/desktop-preview.jpg';
 import resultsSummaryPreview from './assets/results-summary/images/desktop-preview.jpg';
 import creditCardPreview from './assets/credit-card/images/desktop-preview.jpg';
+import productPreviewPreview from './assets/product-preview/images/desktop-preview.jpg';
 
 import { EyeIcon, PaperAirplaneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 import { useState } from 'react';
+import ProductPreview from './components/product-preview/ProductPreview';
 
 type Difficulty = 'newbie' | 'junior' | 'intermediate' | 'advanced' | 'guru';
 
@@ -108,12 +110,12 @@ function App() {
       url: 'https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw',
     },
     {
-      name: 'News Letter',
-      id: 'newsletter3',
-      component: <NewsLetter />,
-      preview: newsLetterPreview,
+      name: 'Product Preview',
+      id: 'productpreview',
+      component: <ProductPreview />,
+      preview: productPreviewPreview,
       difficulty: 'newbie',
-      url: 'https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv',
+      url: 'https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa',
     },
     {
       name: 'News Letter',
@@ -184,7 +186,7 @@ function App() {
         headerColorSelect={headerColorSelect}
         difficulty={activeTab ? activeTab.difficulty : 'guru'}
       />
-      <div className="h-screen bg-slate-200">
+      <div className="h-screen bg-red-600">
         {activeTab ? (
           activeTab.component
         ) : (

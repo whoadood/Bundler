@@ -30,6 +30,11 @@ export default {
         LGrayViolet: 'hsl(270, 3%, 87%',
         DGrayViolet: 'hsl(279, 6%, 55%)',
         darkViolet: 'hsl(278, 68%, 11%)',
+        // product preview
+        darkCyan: 'hsl(158, 36%, 37%)',
+        cream: 'hsl(30, 38%, 92%)',
+        darkBlue: 'hsl(212, 21%, 14%)',
+        grayishBlue: 'hsl(228, 12%, 48%)',
       },
       boxShadow: {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
@@ -38,6 +43,8 @@ export default {
         roboto: '[Roboto](https://fonts.google.com/specimen/Roboto)',
         hanken: '[Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)',
         space: '[Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)',
+        montserrat: '[Montserrat](https://fonts.google.com/specimen/Montserrat)',
+        fraunces: '[Fraunces](https://fonts.google.com/specimen/Fraunces)',
       },
     },
   },
