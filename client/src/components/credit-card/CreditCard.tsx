@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import Main from '../general/Main';
 import Attribution from '../general/Attribution';
 
 import useWindowWidth from '../../hooks/useWindowWidth';
@@ -260,7 +261,7 @@ function CreditCard() {
   //   }, [formError.name, formError.card_number, formError.expiration.month, formError.expiration.year, formError.cvc]);
 
   return (
-    <main className="h-screen flex flex-col items-center font-bold justify-center font-space">
+    <Main font="font-space">
       <div className="h-screen w-screen relative flex flex-col justify-between sm:justify-normal pb-12 sm:pb-0 sm:flex-row">
         <section className="relative bg-blue-300 text-femWhite">
           <img className="h-auto w-full sm:h-full" src={windowWidth && windowWidth > 400 ? bgAccentDT : bgAccentMB} />
@@ -374,7 +375,7 @@ function CreditCard() {
           <Attribution href="https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw" />
         </section>
       </div>
-    </main>
+    </Main>
   );
 }
 

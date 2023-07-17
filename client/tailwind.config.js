@@ -41,6 +41,12 @@ export default {
         darkBrown: 'hsl(25, 47%, 15%)',
         cream2: 'hsl(27, 66%, 92%)',
         paleOrange: 'hsl(33, 100%, 98%)',
+        // news homepage
+        softOrange: 'hsl(35, 77%, 62%)',
+        softRed: 'hsl(5, 85%, 63%)',
+        offWhite: 'hsl(36, 100%, 99%)',
+        grayishBlue2: 'hsl(236, 13%, 42%)',
+        darkBlue2: 'hsl(240, 100%, 5%)',
       },
       boxShadow: {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
@@ -52,6 +58,7 @@ export default {
         montserrat: '[Montserrat](https://fonts.google.com/specimen/Montserrat)',
         fraunces: '[Fraunces](https://fonts.google.com/specimen/Fraunces)',
         dmSans: '[DM Sans](https://fonts.google.com/specimen/DM+Sans)',
+        inter: '[Inter](https://fonts.google.com/specimen/Inter)',
       },
     },
   },

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import Main from '../general/Main';
+import Attribution from '../general/Attribution';
+
 import useWindowWidth from '../../hooks/useWindowWidth';
 
 import cartIcon from '../../assets/product-preview/images/icon-cart.svg';
 import productImageDT from '../../assets/product-preview/images/image-product-desktop.jpg';
 import productImageMB from '../../assets/product-preview/images/image-product-mobile.jpg';
-import Attribution from '../general/Attribution';
 
 type Product = {
   title: string;
@@ -46,34 +48,36 @@ function ProductPreview({ product = defaultProduct }: { product?: Product }) {
   };
 
   return (
-    <main className="font-montserrat flex flex-col justify-center items-center bg-cream h-screen p-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 max-w-[800px] rounded-xl overflow-hidden shadow-lg">
-        <img className="w-[400px]" src={windowWidth && windowWidth > 400 ? productImageDT : productImageMB} />
-        <section className="flex flex-col p-12 gap-6 bg-femWhite text-grayishBlue">
-          <span>{product.catagory.toUpperCase()}</span>
-          <h1 className="font-fraunces font-bold text-3xl sm:text-5xl text-darkBlue">{product.title}</h1>
-          <p className="">{product.description}</p>
-          {product.sale.onSale ? (
-            <div className="flex gap-6">
-              <span className="text-darkCyan font-bold text-4xl font-fraunces">{product.sale.salePrice}</span>
-              <span className="line-through">{product.price}</span>
-            </div>
-          ) : (
-            <div>
-              <span className="text-Dark">${product.price}</span>
-            </div>
-          )}
-          <button
-            onClick={() => handleATC(product)}
-            className="flex gap-3 bg-darkCyan hover:bg-darkBlue text-femWhite font-bold justify-center items-center p-3 rounded-lg"
-          >
-            <img src={cartIcon} />
-            <span>Add to Cart</span>
-          </button>
-        </section>
-      </div>
-      <Attribution href="https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa" />
-    </main>
+    <Main bg="bg-cream" font="font-montserrat">
+      <>
+        <div className="grid grid-cols-1 sm:grid-cols-2 max-w-[800px] rounded-xl overflow-hidden shadow-lg">
+          <img className="w-[400px]" src={windowWidth && windowWidth > 400 ? productImageDT : productImageMB} />
+          <section className="flex flex-col p-12 gap-6 bg-femWhite text-grayishBlue">
+            <span>{product.catagory.toUpperCase()}</span>
+            <h1 className="font-fraunces font-bold text-3xl sm:text-5xl text-darkBlue">{product.title}</h1>
+            <p className="">{product.description}</p>
+            {product.sale.onSale ? (
+              <div className="flex gap-6">
+                <span className="text-darkCyan font-bold text-4xl font-fraunces">{product.sale.salePrice}</span>
+                <span className="line-through">{product.price}</span>
+              </div>
+            ) : (
+              <div>
+                <span className="text-Dark">${product.price}</span>
+              </div>
+            )}
+            <button
+              onClick={() => handleATC(product)}
+              className="flex gap-3 bg-darkCyan hover:bg-darkBlue text-femWhite font-bold justify-center items-center p-3 rounded-lg"
+            >
+              <img src={cartIcon} />
+              <span>Add to Cart</span>
+            </button>
+          </section>
+        </div>
+        <Attribution href="https://www.frontendmentor.io/challenges/product-preview-card-component-GO7UmttRfa" />
+      </>
+    </Main>
   );
 }
 

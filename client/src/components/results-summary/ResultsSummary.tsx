@@ -1,4 +1,6 @@
+import Main from '../general/Main';
 import Attribution from '../general/Attribution';
+
 import ReactionIcon from '../../assets/results-summary/images/icon-reaction.svg';
 import MemoryIcon from '../../assets/results-summary/images/icon-memory.svg';
 import VerbalIcon from '../../assets/results-summary/images/icon-verbal.svg';
@@ -96,31 +98,33 @@ function ResultsSummary({
   const summaryFields = [data.summary.reaction, data.summary.memory, data.summary.verbal, data.summary.visual];
 
   return (
-    <main className="bg-gray-200 h-screen flex flex-col items-center font-bold justify-center font-hanken">
-      <div className="flex items-center rounded-xl bg-femWhite shadow-xl">
-        <section className="h-[450px] w-[300px] bg-gradient-to-b from-violetBlue rounded-xl to-royalBlue flex flex-col justify-center items-center gap-6 text-center px-8 text-femGrey">
-          <h2 className="text-2xl">Your Result</h2>
-          <div className="px-12 py-10 rounded-full bg-gradient-to-b from-violetBlue to-royalBlue shadow-inverted flex flex-col">
-            <span className="text-femWhite text-6xl">{data.result}</span>
-            <span>of {data.totalEntries}</span>
-          </div>
-          <h3 className="text-femWhite text-2xl">{data.outLook.title}</h3>
-          <p>{data.outLook.text}</p>
-        </section>
-        <section className="h-[400px] w-[350px] bg-transparent px-8 pt-2 flex flex-col gap-4">
-          <h2 className="mb-4 text-2xl">Summary</h2>
-          <ul className="flex flex-col gap-3 mb-10">
-            {summaryFields.map((s) => (
-              <SummaryItem key={s.name} field={s} />
-            ))}
-          </ul>
-          <button className="hover:bg-gradient-to-b hover:from-violetBlue hover:to-royalBlue bg-darkSlate text-femWhite py-3 px-2 rounded-full w-full">
-            Continue
-          </button>
-        </section>
-      </div>
-      <Attribution href="https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV" />
-    </main>
+    <Main font="font-hanken">
+      <>
+        <div className="flex items-center rounded-xl bg-femWhite shadow-xl">
+          <section className="h-[450px] w-[300px] bg-gradient-to-b from-violetBlue rounded-xl to-royalBlue flex flex-col justify-center items-center gap-6 text-center px-8 text-femGrey">
+            <h2 className="text-2xl">Your Result</h2>
+            <div className="px-12 py-10 rounded-full bg-gradient-to-b from-violetBlue to-royalBlue shadow-inverted flex flex-col">
+              <span className="text-femWhite text-6xl">{data.result}</span>
+              <span>of {data.totalEntries}</span>
+            </div>
+            <h3 className="text-femWhite text-2xl">{data.outLook.title}</h3>
+            <p>{data.outLook.text}</p>
+          </section>
+          <section className="h-[400px] w-[350px] bg-transparent px-8 pt-2 flex flex-col gap-4">
+            <h2 className="mb-4 text-2xl">Summary</h2>
+            <ul className="flex flex-col gap-3 mb-10">
+              {summaryFields.map((s) => (
+                <SummaryItem key={s.name} field={s} />
+              ))}
+            </ul>
+            <button className="hover:bg-gradient-to-b hover:from-violetBlue hover:to-royalBlue bg-darkSlate text-femWhite py-3 px-2 rounded-full w-full">
+              Continue
+            </button>
+          </section>
+        </div>
+        <Attribution href="https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV" />
+      </>
+    </Main>
   );
 }
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import Main from '../general/Main';
 import Attribution from '../general/Attribution';
 
 import useWindowWidth from '../../hooks/useWindowWidth';
@@ -152,10 +153,12 @@ function SignUpCard() {
 
 function NewsLetter() {
   return (
-    <main className="min-h-screen bg-darkSlate flex flex-col justify-center items-center">
-      <SignUpCard />
-      <Attribution href="https://www.frontendmentor.io?ref=challenge" />
-    </main>
+    <Main font="" bg={'bg-darkSlate'}>
+      <>
+        <SignUpCard />
+        <Attribution href="https://www.frontendmentor.io?ref=challenge" />
+      </>
+    </Main>
   );
 }
 
