@@ -33,13 +33,7 @@ const Header = ({
   handleActiveTab: (project?: Project) => void;
   headerColorSelect: (
     difficulty: Difficulty,
-  ) =>
-    | ''
-    | 'border-green-500 shadow-green-500'
-    | 'border-yellow-600 shadow-yellow-600'
-    | 'border-orange-500 shadow-orange-500'
-    | 'border-red-500 shadow-red-500'
-    | 'border-black shadow-black';
+  ) => '' | 'border-green-500' | 'border-yellow-600' | 'border-orange-500' | 'border-red-500' | 'border-black';
   difficulty: Difficulty;
 }) => {
   const [menuActive, setMenuActive] = useState(false);
@@ -49,7 +43,7 @@ const Header = ({
     <header
       className={`${headerColorSelect(
         difficulty,
-      )} " bg-gradient-to-r from-teal-400 via-cyan-500 to-violet-600 border-b-2 shadow-xl z-10 border-solid pt-1 font-bold text-white text-2xl"`}
+      )} " bg-gradient-to-r from-teal-400 via-cyan-500 to-violet-600 border-b-2 shadow-xl border-solid pt-1 font-bold text-white text-2xl"`}
     >
       <nav className="flex bg-black justify-between items-center w-full relative p-2">
         <div onClick={() => handleActiveTab()} className="cursor-pointer hover:scale-105">
@@ -164,15 +158,15 @@ function App() {
   const headerColorSelect = (difficulty: Difficulty) => {
     switch (difficulty) {
       case 'newbie':
-        return 'border-green-500 shadow-green-500';
+        return 'border-green-500';
       case 'junior':
-        return 'border-yellow-600 shadow-yellow-600';
+        return 'border-yellow-600';
       case 'intermediate':
-        return 'border-orange-500 shadow-orange-500';
+        return 'border-orange-500';
       case 'advanced':
-        return 'border-red-500 shadow-red-500';
+        return 'border-red-500';
       case 'guru':
-        return 'border-black shadow-black';
+        return 'border-black';
       default:
         return '';
     }
@@ -186,7 +180,7 @@ function App() {
         headerColorSelect={headerColorSelect}
         difficulty={activeTab ? activeTab.difficulty : 'guru'}
       />
-      <div className="h-screen bg-red-600">
+      <div className="h-screen">
         {activeTab ? (
           activeTab.component
         ) : (
