@@ -96,7 +96,7 @@ function ResultsSummary({
   const summaryFields = [data.summary.reaction, data.summary.memory, data.summary.verbal, data.summary.visual];
 
   return (
-    <main className="bg-gray-200 h-screen flex flex-col items-center font-bold justify-center">
+    <main className="bg-gray-200 h-screen flex flex-col items-center font-bold justify-center font-hanken">
       <div className="flex items-center rounded-xl bg-femWhite shadow-xl">
         <section className="h-[450px] w-[300px] bg-gradient-to-b from-violetBlue rounded-xl to-royalBlue flex flex-col justify-center items-center gap-6 text-center px-8 text-femGrey">
           <h2 className="text-2xl">Your Result</h2>

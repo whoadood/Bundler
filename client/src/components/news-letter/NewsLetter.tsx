@@ -88,7 +88,7 @@ function SignUpCard() {
 
   if (!success) {
     return (
-      <div className="bg-femWhite p-0 sm:p-4 justify-end flex flex-col-reverse sm:flex-row sm:gap-4 rounded-none sm:rounded-xl sm:w-auto w-full h-screen sm:h-auto text-darkSlate">
+      <div className="bg-femWhite p-0 sm:p-4 justify-end flex flex-col-reverse sm:flex-row sm:gap-4 rounded-none sm:rounded-xl sm:w-auto w-full h-screen sm:h-auto font-roboto text-darkSlate">
         <div className="sm:px-12 px-4 sm:mt-0 mt-12 flex justify-center">
           <div className="flex flex-col max-w-[340px] sm:max-w-[400px] gap-4 justify-center">
             <h1 className="text-5xl font-bold">Stay updated!</h1>

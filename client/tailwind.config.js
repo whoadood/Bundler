@@ -35,6 +35,8 @@ export default {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
       },
       fontFamily: {
+        roboto: '[Roboto](https://fonts.google.com/specimen/Roboto)',
+        hanken: '[Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk)',
         space: '[Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)',
       },
     },
