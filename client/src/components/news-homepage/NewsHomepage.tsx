@@ -86,7 +86,7 @@ function Header() {
       <nav>
         <ul className="flex gap-4 font-normal text-grayishBlue2">
           {navLinks.map((l) => (
-            <li className="capitalize" key={l}>
+            <li className="capitalize hover:text-softOrange cursor-pointer" key={l}>
               {l}
             </li>
           ))}
