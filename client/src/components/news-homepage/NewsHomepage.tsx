@@ -111,7 +111,7 @@ function NewsHomepage({ data = defaultData }: { data?: Data }) {
             <h1 className="col-span-1 text-6xl">{data.main.title}</h1>
             <div className="flex flex-col justify-between items-start">
               <p className="col-span-1 text-grayishBlue2 font-normal">{data.main.content}</p>
-              <a className="uppercase px-8 text-femWhite py-2 rounded bg-softRed" href="*">
+              <a className="uppercase hover:bg-darkBlue2 px-8 text-femWhite py-2 rounded bg-softRed" href="*">
                 Read More
               </a>
             </div>
@@ -122,15 +122,15 @@ function NewsHomepage({ data = defaultData }: { data?: Data }) {
               {data.new.map((a, i) =>
                 i !== data.new.length - 1 ? (
                   <>
-                    <li className="" key={a.title}>
-                      <h3 className="text-femWhite text-xl mb-4">{a.title}</h3>
+                    <li className="group cursor-pointer" key={a.title}>
+                      <h3 className="text-femWhite group-hover:text-softOrange text-xl mb-4">{a.title}</h3>
                       <p className="text-grayishBlue2 font-normal">{a.content}</p>
                     </li>
                     <div className="my-4 border-b-2 border-grayishBlue/50" />
                   </>
                 ) : (
-                  <li className="" key={a.title}>
-                    <h3 className="text-femWhite text-xl mb-4">{a.title}</h3>
+                  <li className="group cursor-pointer" key={a.title}>
+                    <h3 className="text-femWhite group-hover:text-softOrange text-xl mb-4">{a.title}</h3>
                     <p className="text-grayishBlue2 font-normal">{a.content}</p>
                   </li>
                 ),
@@ -140,11 +140,11 @@ function NewsHomepage({ data = defaultData }: { data?: Data }) {
           <section className="col-span-3">
             <ol className="grid grid-cols-3 gap-8">
               {data.trending.map((a, i) => (
-                <li className="grid grid-cols-3 gap-6" key={a.title}>
+                <li className="grid grid-cols-3 gap-6 group cursor-pointer" key={a.title}>
                   <img className="col-span-1" src={a.image?.desktop} />
                   <div className="col-span-2 flex flex-col justify-between">
                     <span className="text-grayishBlue2 text-4xl">0{i + 1}</span>
-                    <h4 className="text-xl">{a.title}</h4>
+                    <h4 className="text-xl group-hover:text-softRed">{a.title}</h4>
                     <p className="text-grayishBlue2 font-normal">{a.content}</p>
                   </div>
                 </li>
