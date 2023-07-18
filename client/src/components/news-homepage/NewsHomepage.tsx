@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Attribution from '../general/Attribution';
 import Main from '../general/Main';
@@ -79,19 +79,46 @@ const defaultData: Data = {
 
 const navLinks = ['home', 'new', 'popular', 'trending', 'categories'];
 
-function Header() {
+function Header({ windowWidth }: { windowWidth: number | null }) {
+  const [menu, setMenu] = useState(false);
+  const toggleMenu = () => setMenu(!menu);
+
   return (
     <header className="flex justify-between items-center">
       <img src={logo} />
-      <nav>
-        <ul className="flex gap-4 font-normal text-grayishBlue2">
-          {navLinks.map((l) => (
-            <li className="capitalize hover:text-softOrange cursor-pointer" key={l}>
-              {l}
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {windowWidth && windowWidth > 400 ? (
+        <nav>
+          <ul className="flex gap-4 font-normal text-grayishBlue2">
+            {navLinks.map((l) => (
+              <li className="capitalize hover:text-softOrange cursor-pointer" key={l}>
+                {l}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : (
+        <>
+          <button onClick={toggleMenu}>
+            <img src={menuIcon} />
+          </button>
+          {menu && (
+            <div className="fixed h-full bg-black/70 top-0 left-0 w-full">
+              <nav className="bg-femWhite absolute top-0 right-0 left-1/3 bottom-0 py-12 px-8">
+                <button className="absolute top-12 right-2" onClick={toggleMenu}>
+                  <img src={menuIconClose} />
+                </button>
+                <ul className="flex absolute top-1/3 -translate-y-1/3 flex-col gap-4 font-normal text-darkBlue2">
+                  {navLinks.map((l) => (
+                    <li className="capitalize hover:text-softOrange cursor-pointer" key={l}>
+                      {l}
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          )}
+        </>
+      )}
     </header>
   );
 }
@@ -100,15 +127,15 @@ function NewsHomepage({ data = defaultData }: { data?: Data }) {
   const windowWidth = useWindowWidth();
   return (
     <Main font="font-inter" bg="softOrange">
-      <div className="max-w-6xl flex flex-col justify-between gap-8">
-        <Header />
-        <div className="grid grid-cols-3 gap-6">
-          <section className="col-span-2 grid grid-cols-2 gap-6">
+      <div className="max-w-6xl flex flex-col relative min-h-screen sm:justify-between gap-8 px-2 py-12">
+        <Header windowWidth={windowWidth} />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <section className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 sm:gap-6 gap-4">
             <img
-              className="col-span-2"
+              className="col-span-1 sm:col-span-2"
               src={windowWidth && windowWidth > 400 ? data.main.image?.desktop : data.main.image?.mobile}
             />
-            <h1 className="col-span-1 text-6xl">{data.main.title}</h1>
+            <h1 className="col-span-1 text-5xl sm:text-6xl">{data.main.title}</h1>
             <div className="flex flex-col justify-between items-start">
               <p className="col-span-1 text-grayishBlue2 font-normal">{data.main.content}</p>
               <a className="uppercase hover:bg-darkBlue2 px-8 text-femWhite py-2 rounded bg-softRed" href="*">
@@ -137,8 +164,8 @@ function NewsHomepage({ data = defaultData }: { data?: Data }) {
               )}
             </ul>
           </section>
-          <section className="col-span-3">
-            <ol className="grid grid-cols-3 gap-8">
+          <section className="sm:col-span-3">
+            <ol className="grid sm:grid-cols-3 grid-cols-1 gap-8">
               {data.trending.map((a, i) => (
                 <li className="grid grid-cols-3 gap-6 group cursor-pointer" key={a.title}>
                   <img className="col-span-1" src={a.image?.desktop} />
