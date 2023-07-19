@@ -22,7 +22,10 @@ type Notification = {
   notification: {
     note: string;
     post?: string;
-    message?: string;
+    message?: {
+      text?: string;
+      image?: string;
+    };
   };
   content?: string;
 };
@@ -72,8 +75,9 @@ const defaultNotifications: Notification[] = [
     read: true,
     notification: {
       note: 'has sent you a private message',
-      message:
-        "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+      message: {
+        text: "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+      },
     },
   },
   {
@@ -85,6 +89,9 @@ const defaultNotifications: Notification[] = [
     read: true,
     notification: {
       note: 'commented on your picture',
+      message: {
+        image: chess,
+      },
     },
   },
   {
@@ -117,7 +124,7 @@ function NotificationItem({ notification }: { notification: Notification }) {
   return (
     <li
       className={`${notification.read ? null : 'bg-lightGB'}
-      ' p-4 grid grid-cols-[40px_auto] gap-4 text-dGB rounded-xl '
+      ' p-4 grid grid-cols-[40px_auto_auto] gap-4 text-dGB rounded-xl '
       `}
     >
       <div className="flex w-12 gap-2 items-star">
@@ -140,12 +147,15 @@ function NotificationItem({ notification }: { notification: Notification }) {
         </p>
         <span className="font-normal text-sm">{notification.time} ago</span>
 
-        {notification.notification.message ? (
+        {notification.notification.message?.text ? (
           <div className="p-4 mt-4 border-2 border-lightGB2 hover:bg-lightGB2 font-normal cursor-pointer rounded-lg">
-            {notification.notification.message}
+            {notification.notification.message.text}
           </div>
         ) : null}
       </div>
+      {notification.notification.message?.image ? (
+        <img className="h-12 w-12" src={notification.notification.message.image} />
+      ) : null}
     </li>
   );
 }
