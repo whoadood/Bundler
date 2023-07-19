@@ -4,6 +4,7 @@ import CreditCard from './components/credit-card/CreditCard';
 import ExpensesChart from './components/expenses-chart/ExpensesChart';
 import NewsHomepage from './components/news-homepage/NewsHomepage';
 import ProductPreview from './components/product-preview/ProductPreview';
+import NotificationPage from './components/notification-page/NotificationPage';
 
 import newsLetterPreview from './assets/news-letter/images/desktop-preview.jpg';
 import resultsSummaryPreview from './assets/results-summary/images/desktop-preview.jpg';
@@ -11,6 +12,7 @@ import creditCardPreview from './assets/credit-card/images/desktop-preview.jpg';
 import productPreviewPreview from './assets/product-preview/images/desktop-preview.jpg';
 import expensesChartPreview from './assets/expenses-chart/images/desktop-preview.jpg';
 import newsHomepagePreview from './assets/news-homepage/images/desktop-preview.jpg';
+import notificationPagePreview from './assets/notification-page/images/desktop-preview.jpg';
 
 import { EyeIcon, PaperAirplaneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
@@ -131,6 +133,14 @@ function App() {
       difficulty: 'junior',
       url: 'https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl',
     },
+    {
+      name: 'Notification Page',
+      id: 'notificationpage',
+      component: <NotificationPage />,
+      preview: notificationPagePreview,
+      difficulty: 'junior',
+      url: 'https://www.frontendmentor.io/challenges/notifications-page-DqK5QAmKbC',
+    },
   ];
 
   const colorSelect = (difficulty: Difficulty) => {
@@ -196,8 +206,8 @@ function App() {
         {activeTab ? (
           activeTab.component
         ) : (
-          <div className="h-screen bg-slate-600 font-bold text-white p-2 flex justify-center items-center">
-            <ul className="grid grid-cols-4 gap-8">
+          <div className="min-h-screen bg-slate-600 font-bold text-white p-2 flex justify-center items-center py-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-3 max-w-7xl gap-2">
               {projects.map((p) => (
                 <li
                   className={`${shadowColorSelect(
@@ -206,7 +216,7 @@ function App() {
                   key={p.id}
                 >
                   <div className="relative group">
-                    <img src={p.preview} className="w-64 rounded-t-xl" />
+                    <img src={p.preview} className=" rounded-t-xl" />
                     <div className="hidden group-hover:flex absolute top-0 bottom-0 right-0 left-0 bg-black/30 justify-center items-center rounded-t-xl">
                       <button
                         onClick={() => handleActiveTab(p)}

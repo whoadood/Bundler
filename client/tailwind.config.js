@@ -47,6 +47,15 @@ export default {
         offWhite: 'hsl(36, 100%, 99%)',
         grayishBlue2: 'hsl(236, 13%, 42%)',
         darkBlue2: 'hsl(240, 100%, 5%)',
+        // notification page
+        femRed: 'hsl(1, 90%, 64%)',
+        femBlue: 'hsl(219, 85%, 26%)',
+        lightGB: 'hsl(210, 60%, 98%)',
+        lightGB2: 'hsl(211, 68%, 94%)',
+        lightGB3: 'hsl(205, 33%, 90%)',
+        gB: 'hsl(219, 14%, 63%)',
+        dGB: 'hsl(219, 12%, 42%)',
+        vDB: 'hsl(224, 21%, 14%)',
       },
       boxShadow: {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
@@ -59,6 +68,7 @@ export default {
         fraunces: '[Fraunces](https://fonts.google.com/specimen/Fraunces)',
         dmSans: '[DM Sans](https://fonts.google.com/specimen/DM+Sans)',
         inter: '[Inter](https://fonts.google.com/specimen/Inter)',
+        jakarta: '[Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)',
       },
     },
   },
