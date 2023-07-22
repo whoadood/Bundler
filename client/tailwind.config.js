@@ -56,6 +56,13 @@ export default {
         gB: 'hsl(219, 14%, 63%)',
         dGB: 'hsl(219, 12%, 42%)',
         vDB: 'hsl(224, 21%, 14%)',
+        // age calculator
+        femPurple: 'hsl(259, 100%, 65%)',
+        lightRed2: 'hsl(0, 100%, 67%)',
+        offWhite2: 'hsl(0, 0%, 94%)',
+        lightGrey: 'hsl(0, 0%, 86%)',
+        smokey: 'hsl(0, 1%, 44%)',
+        offBlack: 'hsl(0, 0%, 8%)',
       },
       boxShadow: {
         inverted: '0 -5px 15px 1px rgba(0, 0, 0, 0.2)',
@@ -69,6 +76,7 @@ export default {
         dmSans: '[DM Sans](https://fonts.google.com/specimen/DM+Sans)',
         inter: '[Inter](https://fonts.google.com/specimen/Inter)',
         jakarta: '[Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)',
+        poppins: '[Poppins](https://fonts.google.com/specimen/Poppins)',
       },
     },
   },

@@ -5,6 +5,7 @@ import ExpensesChart from './components/expenses-chart/ExpensesChart';
 import NewsHomepage from './components/news-homepage/NewsHomepage';
 import ProductPreview from './components/product-preview/ProductPreview';
 import NotificationPage from './components/notification-page/NotificationPage';
+import AgeCalculator from './components/age-calculator/AgeCalculator';
 
 import newsLetterPreview from './assets/news-letter/images/desktop-preview.jpg';
 import resultsSummaryPreview from './assets/results-summary/images/desktop-preview.jpg';
@@ -13,6 +14,7 @@ import productPreviewPreview from './assets/product-preview/images/desktop-previ
 import expensesChartPreview from './assets/expenses-chart/images/desktop-preview.jpg';
 import newsHomepagePreview from './assets/news-homepage/images/desktop-preview.jpg';
 import notificationPagePreview from './assets/notification-page/images/desktop-preview.jpg';
+import ageCalculatorPreview from './assets/age-calculator/images/desktop-preview.jpg';
 
 import { EyeIcon, PaperAirplaneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
@@ -140,6 +142,14 @@ function App() {
       preview: notificationPagePreview,
       difficulty: 'junior',
       url: 'https://www.frontendmentor.io/challenges/notifications-page-DqK5QAmKbC',
+    },
+    {
+      name: 'Age Calculator',
+      id: 'agecalculator',
+      component: <AgeCalculator />,
+      preview: ageCalculatorPreview,
+      difficulty: 'junior',
+      url: 'https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q',
     },
   ];
 
